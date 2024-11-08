@@ -1,4 +1,3 @@
-import { Web, ShoppingCart, AccountBalance } from "@mui/icons-material";
 import "../assets/styles/aboutUs.css";
 
 function AboutUs() {
@@ -24,16 +23,16 @@ function AboutUs() {
           <h2 className="aboutus-subtitle">Como a HUB360+ pode te ajudar?</h2>
           <ol>
             <li>
-              <Web fontSize="medium" /> Marketing Digital e Social Media
+              Marketing Digital e Social Media
             </li>
             <li>
              Automação de Venda
             </li>
             <li>
-              <ShoppingCart fontSize="medium" /> Gestão 360 E-commerce
+               Gestão 360 E-commerce
             </li>
             <li>
-              <AccountBalance fontSize="medium" /> Gestão 360 Licitações
+               Gestão 360 Licitações
             </li>
           </ol>
 
