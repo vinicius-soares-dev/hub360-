@@ -1,0 +1,26 @@
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+.title-main, .service-item h2 {
+  color: var(--color-text);
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.description-main, .service-item p {
+  color: var(--color-text-secondary);
+  margin-bottom: 15px;
+}
+
+.services-list {
+  display: grid;
+  gap: 20px;
+}
+
+.service-item {
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}

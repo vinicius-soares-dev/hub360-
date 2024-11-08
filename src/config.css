@@ -1,0 +1,25 @@
+:root {
+  --font-main: "Baloo Chettan 2", sans-serif;
+  --color-background: #fff;
+  --color-box: #dee4e4;
+  --color-text: #49005c;
+  --color-section: #bca4c4;
+  --color-button: #785383;
+  --color-button-hover: #c4a8c4;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  width: 100vw;
+}

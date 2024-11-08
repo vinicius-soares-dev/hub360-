@@ -1,0 +1,26 @@
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+.title-main, .project-item h2 {
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.description-main, .project-item p {
+  color: var(--color-text-secondary);
+}
+
+.projects-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-item {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}

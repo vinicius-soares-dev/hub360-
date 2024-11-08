@@ -1,0 +1,145 @@
+/* Container principal */
+.aboutus-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 25px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.aboutus-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+}
+
+/* Título principal */
+.aboutus-title {
+  font-weight: 900;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.aboutus-title:hover {
+  transform: scale(1.05);
+}
+
+/* Descrição principal e texto */
+.aboutus-description, .aboutus-text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.75;
+  max-width: 90%;
+  text-align: center;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutus-description:hover, .aboutus-text-content p:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards de serviços */
+.aboutus-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  color: #0073e6;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 1rem;
+}
+
+/* Subtítulo */
+.aboutus-subtitle {
+  font-size: 2rem;
+  margin-top: 25px;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query para telas maiores */
+@media (min-width: 768px) {
+  .aboutus-section {
+    padding: 50px 40px;
+  }
+
+  .aboutus-title {
+    font-size: 3rem;
+  }
+
+  .aboutus-subtitle {
+    font-size: 2.5rem;
+  }
+
+  .aboutus-description, .aboutus-text-content p {
+    font-size: 1.375rem;
+  }
+
+  .aboutus-services {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutus-section {
+    padding: 60px 50px;
+  }
+
+  .aboutus-title {
+    font-size: 3.5rem;
+  }
+
+  .aboutus-subtitle {
+    font-size: 2.7rem;
+  }
+
+  .aboutus-description, .aboutus-text-content p {
+    font-size: 1.5rem;
+  }
+
+  .aboutus-services {
+    grid-template-columns: 1fr 1fr;
+  }
+}
