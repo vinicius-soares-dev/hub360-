@@ -1,6 +1,7 @@
 .main {
   padding: 20px;
   text-align: center;
+  z-index: 3;
 }
 
 .title-main, .project-item h2 {

@@ -1,6 +1,17 @@
 import "../assets/styles/aboutUs.css";
+import Lottie  from "lottie-react";
+import animationData from "../assets/animation/animationA.json";
+import animationPhone from "../assets/animation/phone.json";
+import animationSales from "../assets/animation/sales.json";
+
+import { Container, Typography, Box, Card, CardContent, Avatar, Grid } from "@mui/material";
+import { FormatQuote } from "@mui/icons-material";
+
 
 function AboutUs() {
+
+
+
   return (
     <>
       <section className="aboutus-section">
@@ -8,6 +19,7 @@ function AboutUs() {
         <p className="aboutus-description">
           Oferecemos soluções personalizadas para otimizar seus processos, do marketing ao pós-venda.
         </p>
+        <Lottie animationData={animationData} loop={true} />
         <div className="aboutus-text-content">
           <h2 className="aboutus-subtitle">Quem Somos</h2>
           <p>
@@ -21,6 +33,7 @@ function AboutUs() {
           </p>
 
           <h2 className="aboutus-subtitle">Como a HUB360+ pode te ajudar?</h2>
+          <Lottie animationData={animationPhone} loop={true} />
           <ol>
             <li>
               Marketing Digital e Social Media
@@ -51,11 +64,133 @@ function AboutUs() {
           </p>
           <p>Nosso serviço de Marketing Digital e Social Media pode impulsionar seu negócio para novos patamares de crescimento e conquista de clientes.</p>
 
+          <h2 className="aboutus-subtitle">Automação de vendas</h2>
+          <p>
+           Conecte apps de chat e veja sua história completa com um cliente num único perfil.
+          </p>
+          <Lottie animationData={animationSales} loop={true} />
+          <p>
+            Mantenha várias conversas sem esforços no inbox KOMMO: Com nosso serviço pode conectar múltiplos números de WhatsApp, Instagram, páginas do Facebook e outros apps em um só lugar.
+          </p>
+          <p>
+            Somos Parceiro oficial e orgulhosos da Kommo, uma empresa líder em tecnologia de atendimento ao cliente.
+          </p>
+          <p>
+            Essa parceria nos permite oferecer as soluções de CRM mais avançadas do mercado, aproveitando a expertise da Kommo para atender às demandas de nossos clientes.
+          </p>
+          <p>Através do CRM Kommo, é possível monitorar, analisar e admnistrar as interaçõe nas redes sociais de forma integrada em uma única plataforma.</p>
+
+          <h2 className="aboutus-subtitle">Gestão 360 E-commerce</h2>
+          <p>
+           Vender nunca foi tão fácil: Transforme o seu e-commerce em uma máquina de vendas!
+          </p>
+
+          <p>Por meio de um sistema ERP que permite que você gerencie suas vendas on-line de forma centralizada.</p>
+
+          <p>Integre seu e-commerce com as principais plataformas!</p>
+
+          <p>Integrado a centenas de plataformas, o Bling é um sistema ERP que permite que você gerencie a sua loja virtual com organização e facilidade do pedido à entrega.</p>
+
+          <p>Com a nossa expertise expertise especializada em gestão de E-commerce junto com nossa parceira a plataforma integrada da Bling, você terá todas as ferramentas necessárias para aumentar sua eficiência, maximizar suas chances de sucesso e conquistar novas oportunidades de negócios.</p>
+
           <h2 className="aboutus-subtitle">Valores</h2>
           <p>
             Nossos valores são: integridade, compromisso e excelência. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
+
+         {/* Seção de Depoimentos */}
+         <h2 className="aboutus-subtitle">Depoimentos</h2>
+          <Container sx={{ py: 5, maxWidth: "lg" }}>
+            <Grid container spacing={4}>
+              {/* Depoimento 1 */}
+              <Grid item xs={12} sm={6} md={4}>
+                <Card sx={{ 
+                  height: "100%", 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  borderRadius: "16px", 
+                  boxShadow: 3,
+                  transition: "all 0.3s ease-in-out", 
+                  '&:hover': { 
+                    transform: 'scale(1.05)', 
+                    boxShadow: 8 
+                  }
+                }}>
+                  <CardContent>
+                    <Box display="flex" alignItems="center" gap={2} mb={2}>
+                      <Avatar alt="Lúcio Medeiros" src="/assets/images/avatar1.jpg" sx={{ width: 56, height: 56 }} />
+                      <Typography variant="h6" fontWeight="bold">Lúcio Medeiros</Typography>
+                    </Box>
+                    <Box display="flex" alignItems="center" mb={2}>
+                      <FormatQuote sx={{ color: "var(--color-text)", fontSize: "32px", mr: 1 }} />
+                      <Typography variant="body2" color="textSecondary">
+                        O principal diferencial é a integração de ferramentas que facilita o controle de processos e a busca por licitações e identificação de oportunidades.
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              {/* Depoimento 2 */}
+              <Grid item xs={12} sm={6} md={4}>
+                <Card sx={{ 
+                  height: "100%", 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  borderRadius: "16px", 
+                  boxShadow: 3,
+                  transition: "all 0.3s ease-in-out", 
+                  '&:hover': { 
+                    transform: 'scale(1.05)', 
+                    boxShadow: 8 
+                  }
+                }}>
+                  <CardContent>
+                    <Box display="flex" alignItems="center" gap={2} mb={2}>
+                      <Avatar alt="Leandro Ramos" src="/assets/images/avatar2.jpg" sx={{ width: 56, height: 56 }} />
+                      <Typography variant="h6" fontWeight="bold">Leandro Ramos</Typography>
+                    </Box>
+                    <Box display="flex" alignItems="center" mb={2}>
+                      <FormatQuote sx={{ color: "var(--color-text)", fontSize: "32px", mr: 1 }} />
+                      <Typography variant="body2" color="textSecondary">
+                        Com a automação, conseguimos executar o processo que precisaria de pelo menos cinco pessoas, economizando tempo, reduzindo erros e perdas.
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              {/* Depoimento 3 */}
+              <Grid item xs={12} sm={6} md={4}>
+                <Card sx={{ 
+                  height: "100%", 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  borderRadius: "16px", 
+                  boxShadow: 3,
+                  transition: "all 0.3s ease-in-out", 
+                  '&:hover': { 
+                    transform: 'scale(1.05)', 
+                    boxShadow: 8 
+                  }
+                }}>
+                  <CardContent>
+                    <Box display="flex" alignItems="center" gap={2} mb={2}>
+                      <Avatar alt="Ana Costa" src="#" sx={{ width: 56, height: 56 }} />
+                      <Typography variant="h6" fontWeight="bold">Eduarda Sampaio</Typography>
+                    </Box>
+                    <Box display="flex" alignItems="center" mb={2}>
+                      <FormatQuote sx={{ color: "var(--color-text)", fontSize: "32px", mr: 1 }} />
+                      <Typography variant="body2" color="textSecondary">
+                        Dobramos nosso volume de vendas. Não pensávamos que éramos grandes o suficiente para entrar no mundo do CRM. Eu não poderia estar mais feliz.
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Container>
       </section>
     </>
   );
