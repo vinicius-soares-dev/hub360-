@@ -3,6 +3,7 @@ import Lottie  from "lottie-react";
 import animationData from "../assets/animation/animationA.json";
 import animationPhone from "../assets/animation/phone.json";
 import animationSales from "../assets/animation/sales.json";
+import animationEcommerce from "../assets/animation/ecommerce.json";
 
 import { Container, Typography, Box, Card, CardContent, Avatar, Grid } from "@mui/material";
 import { FormatQuote } from "@mui/icons-material";
@@ -84,6 +85,7 @@ function AboutUs() {
           <p>
            Vender nunca foi tão fácil: Transforme o seu e-commerce em uma máquina de vendas!
           </p>
+          <Lottie animationData={animationEcommerce} loop={true} />
 
           <p>Por meio de um sistema ERP que permite que você gerencie suas vendas on-line de forma centralizada.</p>
 
@@ -93,10 +95,6 @@ function AboutUs() {
 
           <p>Com a nossa expertise expertise especializada em gestão de E-commerce junto com nossa parceira a plataforma integrada da Bling, você terá todas as ferramentas necessárias para aumentar sua eficiência, maximizar suas chances de sucesso e conquistar novas oportunidades de negócios.</p>
 
-          <h2 className="aboutus-subtitle">Valores</h2>
-          <p>
-            Nossos valores são: integridade, compromisso e excelência. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
         </div>
 
          {/* Seção de Depoimentos */}
