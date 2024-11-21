@@ -1,16 +1,14 @@
 import "../assets/styles/homeStyle.css";
 import Logo from "../assets/img/logoHub.png";
 import AboutUs from "../components/AboutUs";
+import Header from "../components/Header";
 
 
 function Home() {
   return (
     <>
       <section className="main-container">
-        <div className="box-divs">
-          <div className="box-purple"></div>
-          <div className="box-light-purple"></div>
-        </div>
+        <Header />
         <img src={Logo} alt="Logo Hub" className="logo" />
         <h1 className="title-main">HUB360+</h1>
         <p className="description-main">Nosso negócio é fazer você vender mais</p>
