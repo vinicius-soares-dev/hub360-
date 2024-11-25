@@ -4,6 +4,7 @@ import Logo from "../assets/img/logoHub.png";
 import AboutUs from "../components/AboutUs";
 import Header from "../components/Header";
 import BlogList from "../components/blogs";
+import Footer from "../components/footer";
 
 function Home() {
   // Tipando a referência como um elemento do tipo HTMLElement
@@ -44,6 +45,7 @@ function Home() {
       </section>
 
       <BlogList />
+      <Footer />
     </>
   );
 }

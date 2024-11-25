@@ -19,6 +19,7 @@ import {
 import { Add, Edit, Delete, Visibility } from '@mui/icons-material';
 import axios from 'axios';
 
+
 // Define the blog type
 interface Blog {
   _id: string;
