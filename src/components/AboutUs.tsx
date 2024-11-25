@@ -15,7 +15,7 @@ function AboutUs() {
 
   return (
     <>
-      <section className="aboutus-section">
+      <section className="aboutus-section" id="section-01">
         <h1 className="aboutus-title">Transformando desafios em oportunidades</h1>
         <p className="aboutus-description">
           Oferecemos soluções personalizadas para otimizar seus processos, do marketing ao pós-venda.
@@ -33,7 +33,7 @@ function AboutUs() {
             Somos "A" equipe dedicada, com especialistas comprometidos em impulsionar o crescimento e eficiência do seu negócio.
           </p>
 
-          <h2 className="aboutus-subtitle">Como a HUB360+ pode te ajudar?</h2>
+          <h2 className="aboutus-subtitle" id="section-02">Como a HUB360+ pode te ajudar?</h2>
           <Lottie animationData={animationPhone} loop={true} />
           <ol>
             <li>
@@ -50,7 +50,7 @@ function AboutUs() {
             </li>
           </ol>
 
-          <h2 className="aboutus-subtitle">Marketing Digital e Social Media</h2>
+          <h2 className="aboutus-subtitle" id="section-03">Marketing Digital e Social Media</h2>
           <p>
             Dê o primeiro passo em direção ao sucesso digital com nossos serviços abrangentes de Marketing Digital e Social Media.
           </p>

@@ -23,15 +23,21 @@ function Header() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", }}>
-      <Typography variant="h6" sx={{ my: 2, }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
         HUB360+
       </Typography>
       <List>
-        {["Sobre Nós", "O que Fazemos", "Soluções", "Blog"].map((item) => (
+        {["Sobre Nós", "O que Fazemos", "Soluções", "Blog"].map((item, index) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center",  }}>
-              <ListItemText primary={item} />
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText
+                primary={
+                  <a href={`#section-0${index + 1}`} style={{ textDecoration: "none", color: "inherit" }}>
+                    {item}
+                  </a>
+                }
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -41,14 +47,14 @@ function Header() {
 
   return (
     <>
-      <AppBar component="nav" sx={{ backgroundColor: 'var(--color-button)' }} elevation={1}>
+      <AppBar component="nav" sx={{ backgroundColor: "var(--color-button)" }} elevation={1}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box display="flex" alignItems="center">
             <Box
               component="img"
               src={LogoContrast}
               alt="HUB360+"
-              sx={{ height: 40, mr: 2, }}
+              sx={{ height: 40, mr: 2 }}
             />
             <Typography
               variant="h6"
@@ -59,14 +65,16 @@ function Header() {
           </Box>
           <Box
             sx={{
-              display: { xs: "none", sm: "flex" }, 
+              display: { xs: "none", sm: "flex" },
               alignItems: "center",
-              gap: 2, 
+              gap: 2,
             }}
           >
-            {["Sobre Nós", "O que Fazemos", "Soluções", "Blog"].map((item) => (
+            {["Sobre Nós", "O que Fazemos", "Soluções", "Blog"].map((item, index) => (
               <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+                <a href={`#section-0${index + 1}`} style={{ textDecoration: "none", color: "inherit" }}>
+                  {item}
+                </a>
               </Button>
             ))}
             <Button
@@ -78,6 +86,7 @@ function Header() {
                 color: "white",
                 "&:hover": { backgroundColor: "var(--color-button-hover)" },
               }}
+              onClick={() => window.location.href = "https://Wa.me/5511971704640"}
             >
               Contato
             </Button>
