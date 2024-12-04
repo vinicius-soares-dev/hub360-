@@ -1,4 +1,4 @@
-
+/* Container principal */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -9,35 +9,50 @@
   padding: 20px;
   text-align: center;
   z-index: 3;
+  position: relative;
 }
 
-
+/* Título principal */
 .title-main {
   font-size: 2.5rem;
   color: var(--color-text);
   margin: 20px 0;
-  letter-spacing: 1px;
   font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  transition: transform 0.3s ease-out;
 }
 
+.title-main:hover {
+  transform: scale(1.05);
+}
+
+/* Descrição */
 .description-main {
   font-size: 1.25rem;
   color: var(--color-text);
   margin-bottom: 30px;
+  transition: transform 0.3s ease-out;
 }
 
+.description-main:hover {
+  transform: scale(1.05);
+}
+
+/* Logo */
 .logo {
   width: 150px;
   margin-top: 20px;
   opacity: 0.9;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .logo:hover {
   opacity: 1;
+  transform: rotate(10deg) scale(1.1); /* Efeito de rotação e aumento suave */
 }
 
-
+/* Caixas de efeito flutuante */
 .box-divs {
   position: absolute;
   top: 0;
@@ -48,99 +63,89 @@
   justify-content: center;
   padding: 20px;
   z-index: 10;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(8px); /* Intensidade de blur ajustada */
 }
 
-
-.box-purple,
-.box-light-purple {
-  width: 120px;
-  height: 15vh; 
-  border-radius: 25px; /* Cantos arredondados */
-  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Transições suaves */
-  animation: slideAnimation 5s infinite ease-in-out; /* Animação refinada */
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+/* Animação de partículas */
+.particle-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
 }
 
-/* Cores das caixas com gradientes suaves */
-.box-purple {
-  background: linear-gradient(135deg, #8e44ad, #6e0052); /* Gradiente roxo */
+.particle-background::before,
+.particle-background::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(121, 83, 131, 0.7);
+  animation: particle-move 6s ease-in-out infinite;
 }
 
-.box-light-purple {
-  background: linear-gradient(135deg, #d8c2d5, #f4e1f4); /* Gradiente lilás */
+.particle-background::before {
+  width: 60px;
+  height: 60px;
+  top: 25%;
+  left: 25%;
+  animation-duration: 6s;
+  animation-delay: 1s;
 }
 
-/* Animação com movimento oscilante, escala e rotação */
-@keyframes slideAnimation {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0) scale(1); /* Posição inicial e final */
+.particle-background::after {
+  width: 40px;
+  height: 40px;
+  top: 60%;
+  left: 60%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+
+@keyframes particle-move {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
   }
-  10% {
-    transform: translate(-10px, -5px) rotate(-5deg) scale(1.05); /* Leve movimento inicial */
-  }
-  20% {
-    transform: translate(-30px, -20px) rotate(-10deg) scale(1.1); /* Move e aumenta a caixa roxa */
-  }
-  30% {
-    transform: translate(10px, 10px) rotate(5deg) scale(1); /* Movimento para frente e para trás */
-  }
-  40% {
-    transform: translate(50px, 30px) rotate(10deg) scale(0.9); /* Move e diminui a caixa lilás */
+  25% {
+    transform: translate(200px, 150px);
+    opacity: 0.8;
   }
   50% {
-    transform: translate(30px, -10px) rotate(-5deg) scale(1.05); /* Leve movimento e aumento da caixa roxa */
+    transform: translate(-100px, -200px);
+    opacity: 0.5;
   }
-  60% {
-    transform: translate(-30px, 10px) rotate(5deg) scale(0.95); /* Leve movimento e diminuição da caixa lilás */
+  75% {
+    transform: translate(300px, 50px);
+    opacity: 0.8;
   }
-  70% {
-    transform: translate(-10px, -5px) rotate(0) scale(1); /* Movimento de retorno */
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
   }
 }
 
-/* Efeito de hover nas caixas */
-.box-purple:hover,
-.box-light-purple:hover {
-  transform: scale(1.1) translateY(-5px) rotate(5deg); /* Aumento e movimento ao passar o mouse */
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada no hover */
-}
-
-/* Efeito de borda ao passar o mouse */
-.box-purple:hover {
-  border: 2px solid #fff; /* Borda branca ao passar o mouse */
-}
-
-.box-light-purple:hover {
-  border: 2px solid #fff; /* Borda branca ao passar o mouse */
-}
-
-
-
-.logo:hover {
-  transform: rotate(5deg);
-}
-
-/* Estilo do botão Saiba Mais - Design Elegante */
+/* Botão "Saiba Mais" */
 .btn {
   padding: 12px 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: var(--color-background);
   background: linear-gradient(145deg, var(--color-button), var(--color-button-hover));
   border: none;
-  border-radius: 50px; /* Bordas mais arredondadas para um look mais suave */
+  border-radius: 50px;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
   position: relative;
-  overflow: hidden;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  z-index: 2;
 }
 
-/* Efeito de brilho suave */
 .btn::before {
   content: '';
   position: absolute;
@@ -161,36 +166,57 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Efeito de sombra e cor de fundo no hover */
 .btn:hover {
   color: var(--color-text);
   background: linear-gradient(145deg, var(--color-button-hover), var(--color-button));
-  transform: translateY(-3px); /* Leve elevação ao passar o mouse */
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Efeito de redução ao clicar */
 .btn:active {
   transform: translateY(0);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* SVG da onda */
 .wave-svg {
   position: absolute;
   bottom: 0;
   width: 100vw;
   z-index: 1;
+  opacity: 0.6; /* Menos opacidade para um fundo mais suave */
 }
 
+/* Estilo Responsivo */
+@media screen and (max-width: 768px) {
+  .title-main {
+    font-size: 2rem;
+  }
 
- 
+  .description-main {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
+
+  .box-divs {
+    gap: 20px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .title-main {
     font-size: 3rem;
   }
 
   .description-main {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .logo {
@@ -198,9 +224,10 @@
   }
 
   .btn {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .box-divs {
+    gap: 40px;
   }
 }
-
-
-

@@ -1,42 +1,107 @@
-import { useRef } from "react";
-import "../assets/styles/homeStyle.css";
-import Logo from "../assets/img/logoHub.png";
-import AboutUs from "../components/AboutUs";
-import Header from "../components/Header";
-import BlogList from "../components/blogs";
-import Footer from "../components/footer";
+import { useRef } from 'react';
+import { Container, Button, Typography } from '@mui/material';
+import { ArrowForward as ArrowForwardIcon } from '@mui/icons-material';  // Importando ícone do Material UI
+import Logo from '../assets/img/logoHub.png';
+import AboutUs from '../components/AboutUs';
+import Header from '../components/Header';
+import BlogList from '../components/blogs';
+import Footer from '../components/footer';
+import { styled } from '@mui/system';
+import '../assets/styles/homeStyle.css';
+
+// Logo estilizado com animação e efeito de hover
+const LogoImage = styled('img')({
+  maxWidth: '150px',
+  marginBottom: '20px',
+  transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out',
+  opacity: 0.8,
+  '&:hover': {
+    transform: 'rotate(15deg) scale(1.1)',
+    opacity: 1,
+  },
+});
+
+// Animações de entrada para os elementos
+const fadeIn = {
+  animation: 'fadeIn 1.5s ease-out forwards',
+};
+
+const fadeInUp = {
+  animation: 'fadeInUp 1.5s ease-out forwards',
+};
 
 function Home() {
-  // Tipando a referência como um elemento do tipo HTMLElement
   const section01Ref = useRef<HTMLElement | null>(null);
 
-  // Função para rolar até a seção "section-01"
   const scrollToSection = () => {
-    // Verifica se a referência existe e rola até a seção
     if (section01Ref.current) {
-      section01Ref.current.scrollIntoView({ behavior: "smooth" });
+      section01Ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <>
-      <section className="main-container">
+      <section className="main-container" style={fadeIn}>
+        <div className="particle-background"></div>
         <Header />
-        <img src={Logo} alt="Logo Hub" className="logo" />
-        <h1 className="title-main">HUB360+</h1>
-        <p className="description-main">Nosso negócio é fazer você vender mais</p>
-        <button className="btn" onClick={scrollToSection}>Saiba Mais</button>
-        <svg
-          className="wave-svg"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <path
-            fill="var(--color-button)" // Ajuste a cor conforme necessário
-            d="M0,64L30,85.3C60,107,120,149,180,170.7C240,192,300,192,360,176C420,160,480,128,540,106.7C600,85,660,75,720,90.7C780,107,840,149,900,160C960,171,1020,149,1080,144C1140,139,1200,149,1260,160C1320,171,1380,181,1410,186.7L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320H0Z"
-            style={{ animation: 'waveHeightAnimation 10s ease-in-out infinite' }} // Adiciona animação de altura
-          />
-        </svg>
+        <Container maxWidth="lg" sx={{ textAlign: 'center', paddingTop: 4 }}>
+          {/* Logo com animação */}
+          <LogoImage src={Logo} alt="Logo Hub" />
+
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 'bold',
+              color: 'var(--color-text)', // Usando a cor primária definida no tema
+              fontSize: '3rem',
+              letterSpacing: 1.5,
+              lineHeight: 1.2,
+              ...fadeInUp,
+            }}
+          >
+            HUB360+
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'text.secondary', // Usando a cor secundária definida no tema
+              marginBottom: '20px',
+              fontWeight: 'light',
+              fontSize: '1.2rem',
+              ...fadeInUp,
+            }}
+          >
+            Nosso negócio é fazer você vender mais
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary" // Usando o 'primary' definido no tema
+            onClick={scrollToSection}
+            sx={{
+              fontSize: '1.2rem',
+              textAlign: 'center',
+              margin: '0 auto',
+              padding: '12px 24px',
+              borderRadius: '30px',
+              textTransform: 'none',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              alignItems: 'center', // Alinha ícone e texto
+              justifyContent: 'center', // Alinha o ícone e o texto de forma centralizada
+              gap: '8px', // Adiciona espaço entre o texto e o ícone
+              backgroundColor: 'var(--color-button)', // Usando a variável de cor definida
+              '&:hover': {
+                backgroundColor: 'var(--color-button-hover)', // Usando a variável de cor de hover
+                boxShadow: '0 8px 16px rgba(0, 0, 0, 0.15)',
+                transform: 'translateY(-3px) scale(1.05)',
+              },
+              ...fadeInUp,
+            }}
+          >
+            Saiba Mais
+            <ArrowForwardIcon sx={{ fontSize: '1.4rem' }} />
+          </Button>
+        </Container>
       </section>
 
       {/* Seção que o botão irá rolar até */}
