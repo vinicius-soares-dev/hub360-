@@ -8,6 +8,8 @@ import animationMarketing from "../assets/animation/sales.json";
 import Criativo5 from "../assets/videos/Criativo 05 .mp4";
 import ImgLicitacao from "../assets/img/Licitações.png";
 import ImgEcommerce from "../assets/img/E-commerce.jpg";
+import ImgAutomacao from "../assets/img/automacao.png";
+import ImgMarketing from "../assets/img/marketing.png";
 
 
 
@@ -67,17 +69,19 @@ function AboutUs() {
       <Box sx={{ backgroundColor: "var(--color-box)", py: 8 }} id="section-02">
         <Container>
           <Grid container spacing={4} alignItems="center" justifyContent="center">
-            <Grid item xs={12} md={6}>
-              <Card sx={{ boxShadow: 3, borderRadius: 2, "&:hover": { boxShadow: 6 } }}>
-                <CardContent sx={{ textAlign: "center" }}>
-                  <Typography variant="h5" fontWeight="bold" gutterBottom sx={{ color: "var(--color-text)" }}>
-                    Gestão 360º Licitações
-                  </Typography>
-                  <Typography variant="body1" sx={{ mb: 3, color: "var(--color-text)" }}>
-                    Quer vender para o governo de forma eficaz? Simplificamos cada etapa do processo de licitações governamentais.
-                    Identificamos oportunidades, preparamos sua empresa e garantimos uma participação eficiente.
-                  </Typography>
-                  <img src={ImgLicitacao} alt="image martelo juiz" style={{ maxWidth: "300px"}} />
+          <Grid item xs={12} md={6}>
+            <Card sx={{ boxShadow: 3, borderRadius: 2, "&:hover": { boxShadow: 6 } }}>
+              <CardContent sx={{ textAlign: "center" }}>
+                <Typography variant="h5" fontWeight="bold" gutterBottom sx={{ color: "var(--color-text)" }}>
+                  Gestão 360º Licitações
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, color: "var(--color-text)" }}>
+                  Quer vender para o governo de forma eficaz? Simplificamos cada etapa do processo de licitações governamentais.
+                  Identificamos oportunidades, preparamos sua empresa e garantimos uma participação eficiente.
+                </Typography>
+                {/* Contêiner para alinhar imagem e botão verticalmente */}
+                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+                  <img src={ImgLicitacao} alt="image martelo juiz" style={{ maxWidth: "300px" }} />
                   <Button
                     variant="contained"
                     endIcon={<ArrowForward />}
@@ -89,9 +93,11 @@ function AboutUs() {
                   >
                     Saiba Mais
                   </Button>
-                </CardContent>
-              </Card>
-            </Grid>
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+
             <Grid item xs={12} md={6}>
               <Card sx={{ boxShadow: 3, borderRadius: 2, "&:hover": { boxShadow: 6 } }}>
                 <CardContent sx={{ textAlign: "center" }}>
@@ -103,7 +109,7 @@ function AboutUs() {
         </Container>
       </Box>
 
-      {/* Seção: Gestão 360º E-commerce */}
+     {/* Seção: Gestão 360º E-commerce */}
       <Box sx={{ backgroundColor: "var(--color-background)", py: 8 }}>
         <Container>
           <Grid container spacing={4} alignItems="center" justifyContent="center">
@@ -116,18 +122,24 @@ function AboutUs() {
                   <Typography variant="body1" sx={{ mb: 3, color: "var(--color-text)" }}>
                     Destaque-se nos maiores marketplaces! Desde a criação da sua loja virtual até a gestão completa, oferecemos uma solução estratégica e integrada.
                   </Typography>
-                  <img src={ImgEcommerce} alt="image e-commerce" style={{ maxWidth: "300px"}} />
-                  <Button
-                    variant="contained"
-                    endIcon={<ShoppingCart />}
-                    sx={{
-                      backgroundColor: "var(--color-button)",
-                      color: "#fff",
-                      "&:hover": { backgroundColor: "var(--color-button-hover)" },
-                    }}
-                  >
-                    Saiba Mais
-                  </Button>
+                  {/* Imagem e Botão alinhados verticalmente */}
+                  <Box sx={{ textAlign: "center", mb: 2, display: "flex", flexDirection: "column" }}>
+                    <img src={ImgEcommerce} alt="image e-commerce" style={{ maxWidth: "300px", marginBottom: "16px", margin: "0 auto", borderTopLeftRadius: "120px", borderBottomRightRadius: "120px"  }} />
+                    <Button
+                      variant="contained"
+                      endIcon={<ShoppingCart />}
+                      sx={{
+                        backgroundColor: "var(--color-button)",
+                        color: "#fff",
+                        "&:hover": { backgroundColor: "var(--color-button-hover)" },
+                        width: "200px",
+                        margin: "0 auto",
+                        marginTop: "1em"
+                      }}
+                    >
+                      Saiba Mais
+                    </Button>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>
@@ -142,6 +154,7 @@ function AboutUs() {
         </Container>
       </Box>
 
+
       {/* Seção: Automação */}
       <Box sx={{ backgroundColor: "var(--color-box)", py: 8 }}>
         <Container>
@@ -155,6 +168,9 @@ function AboutUs() {
                   <Typography variant="body1" sx={{ mb: 3, color: "var(--color-text)" }}>
                     Automatize suas vendas com o poder do CRM KOMMO. Transforme redes sociais, WhatsApp e Telegram em balcões de vendas automáticos.
                   </Typography>
+                  {/* Contêiner para alinhar imagem e botão verticalmente */}
+                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+                  <img src={ImgAutomacao} alt="image martelo juiz" style={{ maxWidth: "300px" , borderTopLeftRadius: "120px", borderBottomRightRadius: "120px" }} />
                   <Button
                     variant="contained"
                     endIcon={<ArrowForward />}
@@ -166,6 +182,7 @@ function AboutUs() {
                   >
                     Saiba Mais
                   </Button>
+                </Box>
                 </CardContent>
               </Card>
             </Grid>
@@ -193,17 +210,24 @@ function AboutUs() {
                   <Typography variant="body1" sx={{ mb: 3, color: "var(--color-text)" }}>
                     Precisa atrair mais clientes? Criamos estratégias personalizadas de marketing digital para aumentar sua visibilidade e conversões.
                   </Typography>
-                  <Button
-                    variant="contained"
-                    endIcon={<ArrowForward />}
-                    sx={{
-                      backgroundColor: "var(--color-button)",
-                      color: "#fff",
-                      "&:hover": { backgroundColor: "var(--color-button-hover)" },
-                    }}
-                  >
-                    Saiba Mais
-                  </Button>
+                  <Box sx={{ textAlign: "center", mb: 2, display: "flex", flexDirection: "column" }}>
+                    <img src={ImgMarketing} alt="image e-commerce" style={{ maxWidth: "300px", marginBottom: "16px", margin: "0 auto", borderTopLeftRadius: "120px", borderBottomRightRadius: "120px"  }} />
+                    <Button
+                      variant="contained"
+                      endIcon={<ShoppingCart />}
+                      sx={{
+                        backgroundColor: "var(--color-button)",
+                        color: "#fff",
+                        "&:hover": { backgroundColor: "var(--color-button-hover)" },
+                        width: "200px",
+                        margin: "0 auto",
+                        marginTop: "1em",
+
+                      }}
+                    >
+                      Saiba Mais
+                    </Button>
+                  </Box>
                 </CardContent>
               </Card>
             </Grid>
