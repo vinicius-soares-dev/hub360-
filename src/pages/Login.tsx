@@ -36,8 +36,7 @@ const Login = () => {
     if (email === 'admin@teste' && password === 'admin123') {
       // Save role in localStorage
       localStorage.setItem('role', 'admin');
-      // Redirect to the Admin page
-      navigate('/admin');
+      setTimeout(() => navigate('/admin'), 2000);
     } else {
       // Handle invalid login
       setError('Invalid email or password');
