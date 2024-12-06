@@ -1,22 +1,10 @@
-.section {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease-in-out; /* Transição suave */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.section-overlap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2; /* Coloca a seção sobre a anterior */
-  transition: transform 0.3s ease-in-out;
-}
-
-.section.scrolled {
-  transform: translateY(100%); /* A seção se moverá para baixo */
-}
-
-.section-overlap.scrolled {
-  transform: translateY(-100%); /* A próxima seção sobrepõe a anterior */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
