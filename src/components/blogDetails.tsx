@@ -70,7 +70,7 @@ const BlogDetail: React.FC = () => {
           <Typography
             variant="h6"
             sx={{
-              fontFamily: "'Merriweather', serif",
+              fontFamily: "var(--font-main)",
               fontWeight: "bold",
               color: "white",
             }}
@@ -98,9 +98,10 @@ const BlogDetail: React.FC = () => {
             align="center"
             sx={{
               mb: 2,
-              fontFamily: "'Merriweather', serif",
+              fontFamily: "var(--font-main)",
               fontWeight: "bold",
               color: "var(--color-text)",
+              fontVariant: "small-caps"
             }}
           >
             {blog.title}

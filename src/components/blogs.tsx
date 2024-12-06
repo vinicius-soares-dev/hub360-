@@ -60,7 +60,7 @@ const BlogList: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            Blog
+            {blogs.length == 0 ? "HUB360+" : "Blogs"}
           </Typography>
         </Box>
         {/* Lista de Blogs */}
