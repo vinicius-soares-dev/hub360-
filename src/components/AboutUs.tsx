@@ -149,7 +149,7 @@ function AboutUs() {
                           margin: "0 auto",
                           marginTop: "1em"
                         }}
-                        onClick={() => window.location.href="/bidding/#section-02"}
+                        onClick={() => window.location.href="/bidding"}
                       >
                         Saiba Mais
                       </Button>
@@ -196,7 +196,7 @@ function AboutUs() {
                       color: "#fff",
                       "&:hover": { backgroundColor: "var(--color-button-hover)" },
                     }}
-                    onClick={() => window.location.href="/bidding/#section-03"}
+                    onClick={() => window.location.href="/bidding"}
                   >
                     Saiba Mais
                   </Button>
@@ -244,7 +244,7 @@ function AboutUs() {
                           marginTop: "1em",
 
                         }}
-                        onClick={() => window.location.href="/bidding/#section-03"}
+                        onClick={() => window.location.href="/bidding"}
                       >
                         Saiba Mais
                       </Button>
