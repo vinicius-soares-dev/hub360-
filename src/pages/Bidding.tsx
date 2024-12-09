@@ -6,6 +6,9 @@ import Criativo1 from "../assets/videos/Criativo 01.mp4";
 import "../assets/styles/aboutUs.css";
 import { ExpandMore } from "@mui/icons-material";
 import Footer from "../components/footer";
+import { Link } from "react-router-dom";
+import ImgEffect from "../assets/img/logo-effect.png";
+import ImgLogo from "../assets/img/logoHub.png";
 
 interface AnimatedBoxProps {
   children: React.ReactNode;
@@ -25,6 +28,19 @@ function AnimatedBox({ children, delay = 0 }: AnimatedBoxProps) {
   );
 }
 
+// Dados dos portais
+const portals = [
+  { nome: 'Status da Plataforma', link: 'http://status.effecti.com.br' },
+  { nome: 'Acompanhe seu Chamado', link: 'https://effecti.movidesk.com' },
+  { nome: 'Site', link: 'http://effecti.com.br' },
+  { nome: 'Blog', link: '#' },
+  { nome: 'Robô de Lances', link: 'https://www.effecti.com.br/robo-de-lances/' },
+  { nome: 'Nova Lei de Licitações', link: 'https://www.effecti.com.br/categoria/nova-lei-de-licitacoes/' },
+  { nome: 'Pregão Eletrônico', link: 'https://www.effecti.com.br/categoria/pregao-eletronico/' },
+  { nome: 'Notícias', link: 'https://www.effecti.com.br/categoria/noticias/' },
+  { nome: 'Login', link: 'http://minha.effecti.com.br' },
+];
+
 function Bidding() {
   return (
     <>
@@ -38,7 +54,7 @@ function Bidding() {
             edge="start"
             color="inherit"
             aria-label="back"
-            onClick={() => window.location.href="/"} // Voltar para a página principal
+            onClick={() => window.location.href="/"} 
           >
             <ArrowBackIcon />
           </IconButton>
@@ -50,7 +66,7 @@ function Bidding() {
               color: "white",
             }}
           >
-            HUB360+ Blog
+            HUB360+ Licitações
           </Typography>
           <Box /> {/* Placeholder para alinhar o botão ao centro */}
         </Toolbar>
@@ -58,8 +74,10 @@ function Bidding() {
     <Box>
       {/* Seção: Conheça nossos serviços */}
       <Box sx={{ backgroundColor: "var(--color-background)", py: 8, textAlign: "center" }} id="section-01">
+        
         <Container>
           <AnimatedBox delay={0.2}>
+            <img src={ImgLogo} alt="logo hub360" style={{ width: "200px"}} />
             <Typography variant="body1" sx={{ maxWidth: "600px", mx: "auto", mb: 4, color: "var(--color-text)", letterSpacing: "1pt" }}>
              Imagine sua empresa diante de uma oportunidade incrível: vender seus produtos ou serviços para o governo. Porém, a complexidade do processo licitatório e os custos envolvidos fazem parecer que esse mercado está fora do seu alcance.
             </Typography>
@@ -463,6 +481,40 @@ function Bidding() {
     </Box>
   </Container>
 </Box>
+
+<Box sx={{ backgroundColor: "var(--color-background)", py: 8, display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center" }}>
+      <Container>
+        <AnimatedBox delay={0.2}>
+          <Typography variant="h4" fontWeight="bold" align="center" gutterBottom sx={{ color: "var(--color-text)" }}>
+            Portais Disponíveis
+          </Typography>
+        </AnimatedBox>
+        <AnimatedBox delay={0.3}>
+          <img src={ImgEffect} style={{ width: "100%"}} alt="imagem logo effect" />
+        </AnimatedBox>
+
+        <Grid container spacing={4}>
+          {portals.map((portal, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <AnimatedBox delay={0.4 + index * 0.2}>
+                <Card sx={{ boxShadow: 3, borderRadius: 2, "&:hover": { boxShadow: 6 } }}>
+                  <CardContent>
+                    <Typography variant="h6" fontWeight="bold" sx={{ color: "var(--color-text)" }} gutterBottom>
+                      {portal.nome}
+                    </Typography>
+                    <Link to={portal.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                      <Button variant="outlined" sx={{ color: "var(--color-button)", borderColor: "var(--color-button)", "&:hover": { backgroundColor: "var(--color-button-hover)", color: "#fff" } }}>
+                        Acessar
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </AnimatedBox>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
 
 
       

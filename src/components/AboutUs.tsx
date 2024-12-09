@@ -13,6 +13,7 @@ import ImgEcommerce from "../assets/img/E-commerce.jpg";
 import ImgAutomacao from "../assets/img/automacao.png";
 import ImgMarketing from "../assets/img/marketing.png";
 import "../assets/styles/aboutUs.css";
+
 interface AnimatedBoxProps {
   children: React.ReactNode;
   delay?: number;
@@ -48,7 +49,7 @@ function AboutUs() {
             </Typography>
           </AnimatedBox>
           <AnimatedBox delay={0.4}>
-            <video width="100%" controls style={{ borderRadius: "8px" }}>
+            <video width="60%" controls style={{ borderRadius: "8px" }}>
               <source src={Criativo5} type="video/mp4" />
               Seu navegador não suporta o elemento de vídeo.
             </video>
@@ -185,7 +186,7 @@ function AboutUs() {
                   <Typography variant="body1" sx={{ mb: 3, color: "var(--color-text)" }}>
                     Automatize suas vendas com o poder do CRM KOMMO. Transforme redes sociais, WhatsApp e Telegram em balcões de vendas automáticos.
                   </Typography>
-                  {/* Contêiner para alinhar imagem e botão verticalmente */}
+                 
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
                   <img src={ImgAutomacao} alt="image martelo juiz" style={{ maxWidth: "300px" , borderTopLeftRadius: "120px", borderBottomRightRadius: "120px" }} />
                   <Button
@@ -205,11 +206,14 @@ function AboutUs() {
               </Card>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Card sx={{ boxShadow: 3, borderRadius: 2, "&:hover": { boxShadow: 6 } }}>
-                <CardContent sx={{ textAlign: "center" }}>
-                  <Lottie animationData={animationAutomation} loop={true} style={{ maxWidth: "300px", margin: "auto" }} />
-                </CardContent>
-              </Card>
+              <AnimatedBox delay={0.3}>
+
+                <Card sx={{ boxShadow: 3, borderRadius: 2, "&:hover": { boxShadow: 6 } }}>
+                  <CardContent sx={{ textAlign: "center" }}>
+                    <Lottie animationData={animationAutomation} loop={true} style={{ maxWidth: "300px", margin: "auto" }} />
+                  </CardContent>
+                </Card>
+              </AnimatedBox>
             </Grid>
           </Grid>
         </Container>
